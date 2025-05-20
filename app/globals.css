@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 255, 255, 255;
+  --background: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  overflow-x: hidden;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Pixel font styling */
+@font-face {
+  font-family: "PixelFont";
+  src: url("/fonts/pixel.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-pixel {
+  font-family: "PixelFont", monospace;
+}
+
+/* For browsers that don't support the pixel font */
+.font-mono {
+  font-family: "PixelFont", monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Star animation */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+}
+
+/* Section spacing */
+section {
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
